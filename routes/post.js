@@ -1,10 +1,10 @@
 const express = require('express')
 const router = express.Router()
-const Post = require('../models/Post')
+const post = require('../models/Post')
 
-router.get('/', async(req, res) => {
+router.get('/', async (req, res) => {
     try {
-        const post = await Post.find()
+        const Post = await post.find()
         res.json(post)
     } catch (error) {
         res.json({

@@ -6,23 +6,18 @@ const cors = require('cors')
 require('dotenv/config')
 
 app.use(bodyParser.urlencoded({
-    extanded: true
+    extended: true
 }));
 app.use(bodyParser.json());
 app.use(cors())
 
 //import routes
 const postRoutes = require('./routes/post')
-
-require('dotenv/config')
-
 app.use('/post', postRoutes)
 
-
 app.get('/', (req, res) => {
-    res.send('sup fellas')
+    res.send('Hallo Opita ')
 })
-
 
 mongoose.connect(process.env.DB_CONNECTION, {
     useNewUrlParser: true,
